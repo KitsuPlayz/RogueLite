@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4916641770126728254}
   - component: {fileID: 4386289983888304119}
-  - component: {fileID: 3205776059537173578}
   - component: {fileID: 2264219570846119985}
   - component: {fileID: 5215003795064117103}
+  - component: {fileID: 8808057149975523528}
   m_Layer: 12
   m_Name: PlayerIceAttack
   m_TagString: PlayerAttack
@@ -87,18 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3205776059537173578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6026782329323472691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69ea3b9c1c6624e46a234fdca4fb3dfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &2264219570846119985
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -161,3 +149,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8808057149975523528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6026782329323472691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d61cd7ddbdc9ed04e88e732bb937a3a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

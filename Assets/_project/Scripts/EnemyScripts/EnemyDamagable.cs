@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class EnemyDamagable : Enemy
 {
-
-    private Player player;
     private void Start()
     {
         maxEnemyHp = 5;
         enemyHp = maxEnemyHp;
-        player = FindObjectOfType<Player>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

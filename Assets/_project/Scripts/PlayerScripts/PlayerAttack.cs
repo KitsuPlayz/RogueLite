@@ -21,8 +21,11 @@ public class PlayerAttack : Player
 
     public void OnAttack(CallbackContext _callback)
     {
-        Instantiate(playerIceAttack, transform.position, transform.rotation);
-        StartCoroutine("WaitToAttack");
+        if (_callback.performed)
+        {
+            Instantiate(playerIceAttack, transform.position, transform.rotation);
+            StartCoroutine("WaitToAttack");
+        }
     }
 
     public IEnumerator WaitToAttack()
