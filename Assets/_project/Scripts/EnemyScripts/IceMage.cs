@@ -4,17 +4,30 @@ using UnityEngine;
 
 public class IceMage : Enemy
 {
+    [SerializeField] GameObject iceAttack; 
     private bool playerInRange = false;
 
-    public void OnTriggerStay2D(Collider2D collision)
+    private void Start()
+    {
+        enemyAttackSpeed = 2;
+       
+    }
+    private void Update()
+    {
+        
+    }
+    //checks if the player is in range of the Ice Mage for it to attack.
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            StartCoroutine("WaitToAttack");
             playerInRange = true;
-            Debug.Log(playerInRange);
         }
+           
     }
-
+    
+    //checks if the player left the range.
     public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -24,14 +37,21 @@ public class IceMage : Enemy
         }
     }
 
-
-    public void UseAttack(GameObject IceAttack)
+    //instantiates the attack when the player is in range.
+    public void UseAttack()
     {
         enemyAttackRange = 5;
+        Instantiate(iceAttack, transform.position, transform.rotation);
+        
+    }
 
+    public IEnumerator WaitToAttack()
+    {
+        UseAttack();
+        yield return new WaitForSecondsRealtime(enemyAttackSpeed);
         if (playerInRange)
         {
-            
+            StartCoroutine("WaitToAttack");
         }
     }
 }

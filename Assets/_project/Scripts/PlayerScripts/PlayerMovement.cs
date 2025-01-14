@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : Player
 {
-    private Player playerStats;
     [SerializeField] SpriteRenderer p_Sprite;
     float inputHorizontal;
 
     private Vector2 movementVectors;
-    void Start()
+
+    private void Start()
     {
-        playerStats = FindFirstObjectByType<Player>();
+        playerMovementSpeed = 0.1f;
     }
 
     public void PlayerMoving(CallbackContext _callback)
@@ -31,6 +31,6 @@ public class PlayerMovement : MonoBehaviour
         {
             p_Sprite.flipX = false;
         }
-        transform.Translate(movementVectors.normalized * playerStats.playerMovementSpeed);
+        transform.Translate(movementVectors.normalized * playerMovementSpeed);
     }
 }
